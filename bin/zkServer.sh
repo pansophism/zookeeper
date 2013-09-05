@@ -70,7 +70,7 @@ fi
 echo "Using config: $ZOOCFG"
 
 if [ -z $ZOOPIDFILE ]
-    then ZOOPIDFILE=$(grep dataDir "$ZOOCFG" | sed -e 's/.*=//')/zookeeper_server.pid
+    then ZOOPIDFILE=$(grep -e '^dataDir' "$ZOOCFG" | sed -e 's/.*=//')/zookeeper_server.pid
 fi
 
 
